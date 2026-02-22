@@ -48,8 +48,8 @@ class TestBloodPressureController:
                 systolic_std=5.0,
                 diastolic_std=3.0,
                 pulse_pressure_avg=43.0,
-                high_readings_count=1,
-                low_readings_count=0
+                high_records_count=1,
+                low_records_count=0
             )
         ]
 

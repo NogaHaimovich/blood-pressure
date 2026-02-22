@@ -31,13 +31,13 @@ class BloodPressureService:
             "diastolic_std": self._calculate_metric(diastolic_values, statistics.pstdev, "std_dev"),
             "pulse_pressure_avg": self._calculate_metric(pulse_pressures, statistics.mean, "mean"),
 
-            "high_readings_count": sum(1 for r in records if r.systolic > 140 or r.diastolic > 90),
-            "low_readings_count": sum(1 for r in records if r.systolic < 100 or r.diastolic < 60),
+            "high_records_count": sum(1 for r in records if r.systolic > 140 or r.diastolic > 90),
+            "low_records_count": sum(1 for r in records if r.systolic < 100 or r.diastolic < 60),
         }
 
         logger.info(f"Calculated stats: avg_systolic={stats['average_systolic']:.1f}, "
-                   f"high_readings={stats['high_readings_count']}, "
-                   f"low_readings={stats['low_readings_count']}")
+                   f"high_records={stats['high_records_count']}, "
+                   f"low_records={stats['low_records_count']}")
         return stats
 
 
@@ -45,7 +45,7 @@ class BloodPressureService:
     def add_bp_record(user_id: int, bp_create: BloodPressureCreate) -> BloodPressure:
         logger.info(f"Adding BP record for user {user_id}: {bp_create.systolic}/{bp_create.diastolic}")
 
-        reading = BloodPressure(
+        record = BloodPressure(
             user_id=user_id,
             systolic=bp_create.systolic,
             diastolic=bp_create.diastolic,
@@ -53,9 +53,9 @@ class BloodPressureService:
         )
 
         try:
-            storage.add_record(reading)
+            storage.add_record(record)
             logger.info(f"Successfully added BP record for user {user_id}")
-            return reading
+            return record
         except Exception as e:
             logger.error(f"Failed to add BP record for user {user_id}: {str(e)}")
             raise

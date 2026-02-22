@@ -24,8 +24,8 @@ class TestBloodPressureService:
 
         assert pytest.approx(stats["average_systolic"], rel=1e-2) == 131.67
         assert pytest.approx(stats["average_diastolic"], rel=1e-2) == 86.67
-        assert stats["high_readings_count"] == 1
-        assert stats["low_readings_count"] == 0
+        assert stats["high_records_count"] == 1
+        assert stats["low_records_count"] == 0
         assert "pulse_pressure_avg" in stats
 
     @patch('storage.storage.add_record')

@@ -32,5 +32,5 @@ class MonthlyUserReport(BaseModel):
     diastolic_std: float
 
     pulse_pressure_avg: float  # systolic  - diastolic
-    high_readings_count: int  #  > 140/90
-    low_readings_count: int  #  < 100/60
+    high_records_count: int  #  > 140/90
+    low_records_count: int  #  < 100/60

@@ -1,17 +1,17 @@
 # Blood Pressure Reporting Service
 
 A RESTful API service for recording and reporting blood pressure measurements.
-Built with FastAPI, this service allows users to record their blood pressure readings and generate monthly statistical reports.
+Built with FastAPI, this service allows users to record their blood pressure records and generate monthly statistical reports.
 
 ## Features
 
-- **Record Blood Pressure Measurements**: Add systolic and diastolic readings with timestamps for any user
+- **Record Blood Pressure Measurements**: Add systolic and diastolic records with timestamps for any user
 - **Monthly Reports**: Generate comprehensive monthly reports with statistical analysis including:
   - Average systolic and diastolic values
   - Standard deviations
   - Average pulse pressure
-  - Count of high readings (>140/90 mmHg)
-  - Count of low readings (<100/60 mmHg)
+  - Count of high records (>140/90 mmHg)
+  - Count of low records (<100/60 mmHg)
 - **Data Validation**: Automatic validation of blood pressure values and timestamps
 - **Logging**: Comprehensive logging to both console and file
 - **In-Memory Storage**: Fast, lightweight storage solution (data persists during server runtime)
@@ -76,8 +76,8 @@ Retrieves a monthly report for all users.
     "systolic_std": 5.3,
     "diastolic_std": 3.1,
     "pulse_pressure_avg": 40.3,
-    "high_readings_count": 1,
-    "low_readings_count": 0
+    "high_records_count": 1,
+    "low_records_count": 0
   }
 ]
 ```
