@@ -106,7 +106,8 @@ This section documents all assumptions made for input validation and checks:
 
 1. **Clone the repository** (or navigate to the project directory):
    ```bash
-   cd blood-presure-service
+   git clone https://github.com/NogaHaimovich/blood-pressure.git
+   cd blood-pressure
    ```
 
 2. **Create a virtual environment** (recommended):
