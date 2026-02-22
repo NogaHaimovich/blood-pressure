@@ -60,11 +60,11 @@ class BloodPressureService:
             logger.error(f"Failed to add BP record for user {user_id}: {str(e)}")
             raise
 
-    def calc_data_for_month_report(self, month: int, year: int) -> List[MonthlyUserReport]:
+    def calc_data_for_month_report(self, year: int, month: int) -> List[MonthlyUserReport]:
         logger.info(f"Generating monthly report for {year}-{month:02d}")
 
         logger.info(f"Retrieving records for {year}-{month:02d}")
-        all_records = storage.get_records_for_month(month, year)
+        all_records = storage.get_records_for_month(year, month)
 
         if not all_records:
             logger.warning(f"No records found for {year}-{month:02d}")

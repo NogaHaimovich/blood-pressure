@@ -10,7 +10,7 @@ class BloodPressureStorage:
         year_month = f"{reading.timestamp.year}-{reading.timestamp.month:02d}"
         self._records[year_month][reading.user_id].append(reading)
 
-    def get_records_for_month(self, month: int, year: int) -> Dict[int, List[BloodPressure]]:
+    def get_records_for_month(self, year: int, month: int) -> Dict[int, List[BloodPressure]]:
         year_month = f"{year}-{month:02d}"
         return self._records[year_month]
 

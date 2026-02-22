@@ -53,7 +53,7 @@ class BloodPressureController:
             )
 
         try:
-            reports = self.service.calc_data_for_month_report(month, year)
+            reports = self.service.calc_data_for_month_report(year, month)
             logger.info(f"Successfully generated monthly report with {len(reports)} entries")
             return reports
         except ValueError as e:
